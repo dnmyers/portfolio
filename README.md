@@ -3,4 +3,4 @@ This is my portfolio website.  It showcases some of my projects, contains inform
 The URL for my website is danielnmyers.com
 
 ## Technologies
-Some of the technologies I used to create my portfolio website are React, TailwindCSS, and Framer Motion.
+Some of the technologies I used to create this site are React, TailwindCSS, and Framer Motion.
