@@ -7,11 +7,10 @@ const projectsList = [
             "It allows users to search the Spotify library and create custom playlists.  By completing this project, " +
             "I showcased my proficiency in HTML, CSS, JavaScript, React, version control using Git and " +
             "hosting repositories on GitHub, as well as my knowledge of HTTP requests, responses, " +
-            "and authentication with the Spotify API.  Click this card to check it out or click the Github link below " +
-            "to view the repository.",
+            "and authentication with the Spotify API. The source repository is linked below; a self-hosted demo will be added when available.",
         img: "/images/jammming.png",
         authorName: "Daniel Myers",
-        href: "https://jammming.danielnmyers.com",
+        demoSubdomain: "jammming",
         github: "https://github.com/dnmyers/jammming-new",
         category: ["React", "HTML", "CSS", "JavaScript", "Spotify API", "Git", "GitHub"],
         // desc: "In this project, I built a React web application called Jammming. Using React components, state management, and requests with the Spotify API, I created a website that allows users to search the Spotify library and create custom playlists. Users can search for songs by title, artist, genre, and more. The application displays information about each song, including title, artist, and album. Once users have created their custom playlist, they can save it directly to their personal Spotify account. The                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              project utilizes HTML, CSS, JavaScript, and React, and integrates with the Spotify API for data retrieval and authentication. The application is deployed and the repository is hosted on GitHub. For more details about the project, including its purpose, technologies used, features, and future work, please refer to the README document."
@@ -35,10 +34,10 @@ const projectsList = [
             "for local businesses based on the location and keywords entered.  I built this project " +
             "for a React course I took from Codecademy.  It uses HTML, CSS, JavaScript, React, and the Yelp API. " +
             "Users are able to search by restaurant name or cuisine type, and sort by Best Match, Highest Rated, or Most Reviewed. " +
-            "Click this card to see it in action or  click the Github link below to check out the repository.",
+            "The source repository is linked below; a self-hosted demo will be added when available.",
         img: "/images/ravenous.png",
         authorName: "Daniel Myers",
-        href: "https://ravenous.danielnmyers.com/",
+        demoSubdomain: "ravenous",
         github: "https://github.com/dnmyers/ravenous-updated/tree/main",
         category: ["React", "HTML", "CSS", "JavaScript", "Yelp API", "Git", "GitHub"],
     },
@@ -47,10 +46,10 @@ const projectsList = [
         desc:
             "I built this website with React to demonstrate some of my projects and web development skills.  It uses React Router for the routing, Framer Motion " +
             "for the animations, EmailJS for the contact form, and Tailwind CSS for styling." +
-            "You can click this card to go back to the homepage, or click on the GitHub link below to check out it's repository.",
+            "This site demonstrates React Router, Framer Motion, EmailJS, and Tailwind CSS. Its source repository is linked below.",
         img: "/images/danielnmyers.com.png",
         authorName: "Daniel Myers",
-        href: "https://www.danielnmyers.com",
+        href: "/",
         github: "https://github.com/dnmyers/portfolio",
         category: ["React", "Tailwind CSS", "Framer Motion", "React Router", "EmailJS","HTML", "CSS", "JavaScript",  "Git", "GitHub"],
     },
@@ -63,7 +62,7 @@ const projectsList = [
             "middle of the page.",
         img: "/images/inspirational-homepage.png",
         authorName: "Daniel N. Myers",
-        href: "https://inspirational-homepage.danielnmyers.com",
+        demoSubdomain: "inspirational-homepage",
         github: "https://github.com/dnmyers/inspirational-homepage-v2.0",
         category: ["React", "Redux", "Framer Motion", "Sass", "OpenWeatherMap API", "Unsplash API", "Quotable API", "HTML", "JavaScript", "Git", "GitHub"],
     },
@@ -75,11 +74,10 @@ const projectsList = [
             "Entity Framework, and LINQ to create a multi-page web app.  I created this app as my capstone " +
             "project for Codecademy's ASP.NET skill path.  For this project, I built a dynamic sports league " +
             "web app with intricate functionalities, including team and player data retrieval, advanced sorting, " +
-            "filtering, and dynamic rendering of teams and players' information.  Click this card to see it in action or " +
-            "click the Github link below to check out the repository.",
+            "filtering, and dynamic rendering of teams and players' information. The source repository is linked below; a self-hosted demo will be added when available.",
         img: "/images/league.png",
         authorName: "Daniel Myers",
-        href: "https://league20230716014917.azurewebsites.net",
+        demoSubdomain: "league",
         github: "https://github.com/dnmyers/League",
         category: [".NET", "ASP.NET", "Entity Framework", "LINQ", "Razor Pages", "C#.NET", "HTML", "CSS", "JavaScript", "Bootstrap", "Git", "GitHub"],
     },

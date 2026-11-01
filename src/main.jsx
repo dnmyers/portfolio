@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LogRocket from "logrocket";
-import setupLogRocketReact from "logrocket-react";
 
 import App from "./App.jsx";
 import ErrorPage from "./components/ErrorPage/ErrorPage.jsx";
@@ -13,8 +11,12 @@ import Hero from "./components/Hero/Hero.jsx";
 
 import "./index.css";
 
-LogRocket.init("o7obyf/danielnmyerscom");
-setupLogRocketReact(LogRocket);
+// // Optional session analytics. Uncomment and configure when the site is live
+// // and LogRocket is intentionally enabled again.
+// import LogRocket from "logrocket";
+// import setupLogRocketReact from "logrocket-react";
+// LogRocket.init("o7obyf/danielnmyerscom");
+// setupLogRocketReact(LogRocket);
 
 const router = createBrowserRouter([
     {

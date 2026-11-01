@@ -1,0 +1,48 @@
+services:
+  portfolio:
+    build:
+      context: .
+      args:
+        VITE_PROJECT_DEMO_DOMAIN: ${VITE_PROJECT_DEMO_DOMAIN:-}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+    expose:
+      - "80"
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - portfolio
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
+  cloudflared:
+    image: cloudflare/cloudflared:2026.10.6
+    command: tunnel --no-autoupdate run --token-file /run/secrets/cloudflare_tunnel_token
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      portfolio:
+        condition: service_healthy
+    networks:
+      - portfolio
+    secrets:
+      - cloudflare_tunnel_token
+    profiles:
+      - public
+
+networks:
+  portfolio:
+    name: portfolio-web
+
+secrets:
+  cloudflare_tunnel_token:
+    file: ./secrets/cloudflare_tunnel_token
