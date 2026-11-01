@@ -1,13 +1,14 @@
-import { useState, useEffect, useRef } from "react";
+// src/components/Contact/Contact.jsx
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 
 const Contact = () => {
     const [nameInput, setNameInput] = useState("");
     const [emailInput, setEmailInput] = useState("");
-    const [emailError, setEmailError] = useState("");
     const [phoneInput, setPhoneInput] = useState("");
     const [messageInput, setMessageInput] = useState("");
+    const [submitStatus, setSubmitStatus] = useState("");
 
     // Name
     const handleNameInput = (e) => {
@@ -43,6 +44,12 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        // Avoid sending real email locally unless EmailJS is explicitly enabled.
+        if (import.meta.env.DEV && import.meta.env.VITE_CONTACT_MODE !== "emailjs") {
+            setSubmitStatus("Mock mode: this message was not sent.");
+            return;
+        }
+
         emailjs
         .sendForm(
             "gmail",
@@ -52,11 +59,10 @@ const Contact = () => {
             )
             .then(
                 () => {
-                    alert("Message successfully sent!");
-                    window.location.href = "https://danielnmyers.com/";
+                    setSubmitStatus("Message sent successfully.");
                 },
                 () => {
-                    alert("Failed to send the message, please try again.");
+                    setSubmitStatus("Message could not be sent. Please try again.");
                 }
             );
     };
@@ -113,27 +119,27 @@ const Contact = () => {
                         className='space-y-5'
                     >
                         <div>
-                            <label className='font-medium'>Full name</label>
+                            <label htmlFor='contact-name' className='font-medium'>Full name</label>
                             <input
+                                id='contact-name'
                                 type='text'
                                 name='name'
                                 placeholder='Name'
                                 value={nameInput}
                                 onChange={handleNameInput}
-                                onBlur={() => setEmailTouched(true)}
                                 required
                                 className='w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border shadow-md rounded-lg placeholder-gray-500 focus:border-sky-800 focus:ring-1 focus:ring-sky-500'
                             />
                         </div>
                         <div>
-                            <label className='font-medium'>Email</label>
+                            <label htmlFor='contact-email' className='font-medium'>Email</label>
                             <input
+                                id='contact-email'
                                 type='email'
                                 name='email'
                                 placeholder='Email'
                                 onChange={handleEmailInput}
                                 value={emailInput}
-                                pattern="/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i"
                                 required
                                 className='w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border shadow-md rounded-lg placeholder-gray-500 focus:border-sky-800 focus:ring-1 focus:ring-sky-500 invalid:[&:not(:placeholder-shown):not(:focus)]:bg-red-200 invalid:[&:not(:placeholder-shown):not(:focus)]:text-red-800 peer'
                             />
@@ -142,7 +148,7 @@ const Contact = () => {
                             </span>
                         </div>
                         <div>
-                            <label className='font-medium'>Phone number</label>
+                            <label htmlFor='contact-phone' className='font-medium'>Phone number (optional)</label>
                             <div className='relative mt-2'>
                                 <div className='absolute inset-y-0 left-3 my-auto h-6 flex items-center border-r pr-2'>
                                     <select className='text-sm bg-transparent outline-none rounded-lg h-full'>
@@ -152,19 +158,20 @@ const Contact = () => {
                                     </select>
                                 </div>
                                 <input
+                                    id='contact-phone'
                                     type='tel'
                                     name='phone_number'
                                     placeholder='(555) 000-0000'
                                     onChange={handlePhoneInput}
                                     value={phoneInput}
-                                    required
                                     className='w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border placeholder-gray-500 shadow-md rounded-lg focus:border-sky-800 focus:ring-1 focus:ring-sky-500'
                                 />
                             </div>
                         </div>
                         <div>
-                            <label className='font-medium'>Message</label>
+                            <label htmlFor='contact-message' className='font-medium'>Message</label>
                             <textarea
+                                id='contact-message'
                                 required
                                 name='message'
                                 placeholder='Message...'
@@ -172,6 +179,7 @@ const Contact = () => {
                                 value={messageInput}
                                 className='w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border placeholder-gray-500 shadow-md rounded-lg focus:border-sky-800 focus:ring-1 focus:ring-sky-500'
                             ></textarea>
+                            {submitStatus && <p role='status' aria-live='polite'>{submitStatus}</p>}
                         </div>
                         <motion.input
                             type='submit'

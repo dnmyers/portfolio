@@ -1,9 +1,12 @@
+// src/components/Projects/Project/Project.jsx
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { MarkGithubIcon } from "@primer/octicons-react";
+import { projectDemoUrl } from "../../../config/site.js";
 
 const Project = ({ project, index }) => {
     const delay = index * 0.3;
+    const projectHref = project.href ?? projectDemoUrl(project.demoSubdomain);
 
     const ProjectVariants = {
         show: {
@@ -38,20 +41,36 @@ const Project = ({ project, index }) => {
             className='project max-w-lg mx-auto mt-4 shadow-lg border rounded-3xl hover:shadow-xl'
             key={project.title}
         >
-            <a href={project.href} target='_blank' rel='noreferrer'>
-                <img
-                    src={project.img}
-                    loading='lazy'
-                    alt={project.title}
-                    className='w-full h-52 rounded-t-3xl'
-                />
-                <div className="flex flex-col justify-between">
-                    <div className='pt-2 ml-4 mr-4'>
-                        <h3 className='text-xl text-gray-900'>{project.title}</h3>
-                        <p className='text-gray-400 text-sm mt-1 h-56'>{project.desc}</p>
+            {projectHref ? (
+                <a
+                    href={projectHref}
+                    target={projectHref === "/" ? undefined : "_blank"}
+                    rel={projectHref === "/" ? undefined : "noreferrer"}
+                >
+                    <img
+                        src={project.img}
+                        loading='lazy'
+                        alt={project.title}
+                        className='w-full h-52 rounded-t-3xl'
+                    />
+                    <div className="flex flex-col justify-between">
+                        <div className='pt-2 ml-4 mr-4'>
+                            <h3 className='text-xl text-gray-900'>{project.title}</h3>
+                            <p className='text-gray-400 text-sm mt-1 h-56'>{project.desc}</p>
+                        </div>
                     </div>
+                </a>
+            ) : (
+                <div>
+                    <img
+                        src={project.img}
+                        loading='lazy'
+                        alt={project.title}
+                        className='w-full h-52 rounded-t-3xl'
+                    />
+                    <div className='px-4 pt-2 text-sm text-gray-500'>Live demo coming soon</div>
                 </div>
-            </a>
+            )}
             <motion.div
                 whileHover={{
                 }}

@@ -1,3 +1,4 @@
+// src/components/Footer/Footer.jsx
 import { Link } from "react-router-dom";
 import { MarkGithubIcon } from "@primer/octicons-react";
 import { motion } from 'framer-motion';

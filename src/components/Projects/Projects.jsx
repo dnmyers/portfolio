@@ -1,7 +1,8 @@
+// src/components/Projects/Projects.jsx
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
 
-import Project from './Project/Project';
+import Project from './Project';
 
 const ProjectsVariants = {
     hidden: {
@@ -18,18 +19,18 @@ const ProjectsVariants = {
 const Projects = ({ projectsList }) => {
     return (
         <motion.div
-            variants={ProjectsVariants}
+            variants={ ProjectsVariants }
             initial="hidden"
             animate="show"
             className='mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 sm:gap-5'
         >
             {
-                projectsList.map((project, i) => (
-                    <Project project={project} key={i} index={i} />
+                projectsList.map((project) => (
+                    <Project project={ project } key={ project.id } index={ project.id } />
                 ))
             }
         </motion.div>
     );
-}
+};
 
 export default Projects;

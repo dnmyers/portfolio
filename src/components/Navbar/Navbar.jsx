@@ -1,3 +1,4 @@
+// src/components/Navbar/Navbar.jsx
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { motion } from 'framer-motion';

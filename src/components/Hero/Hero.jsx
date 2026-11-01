@@ -1,3 +1,4 @@
+// src/components/Hero/Hero.jsx
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
