@@ -1,3 +1,4 @@
+// src/components/Contact/Contact.jsx
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
@@ -43,6 +44,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
+        // Avoid sending real email locally unless EmailJS is explicitly enabled.
         if (import.meta.env.DEV && import.meta.env.VITE_CONTACT_MODE !== "emailjs") {
             setSubmitStatus("Mock mode: this message was not sent.");
             return;

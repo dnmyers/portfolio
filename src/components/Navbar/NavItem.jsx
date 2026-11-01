@@ -1,3 +1,4 @@
+// src/components/Navbar/NavItem.jsx
 /* eslint-disable react/prop-types */
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';

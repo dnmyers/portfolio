@@ -1,3 +1,4 @@
+// src/components/Hero/heroImage.jsx
 export const heroImage = (
     <svg
                         xmlns='http://www.w3.org/2000/svg'

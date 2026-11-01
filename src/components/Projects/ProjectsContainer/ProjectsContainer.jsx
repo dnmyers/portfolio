@@ -1,7 +1,8 @@
+// src/components/Projects/ProjectsContainer/ProjectsContainer.jsx
 import { motion } from 'framer-motion';
 
 import Projects from '../Projects';
-import ProjectsHeader from "../ProjectsHeader/ProjectsHeader";
+import ProjectsHeader from "../ProjectsHeader";
 
 import projectsList from "../projectsList";
 

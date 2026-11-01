@@ -1,5 +1,8 @@
+// src/components/Projects/projectsList.js
+// Each entry provides card content and either a direct href or an optional demoSubdomain.
 const projectsList = [
     {
+        id: 1,
         title: "Jammming",
         desc:
             "This project served as my capstone for Codecademy's React Skill Path.  Jammming is " +
@@ -28,6 +31,7 @@ const projectsList = [
     //     href: "https://ingredient-matcher.surge.sh"
     // },
     {
+        id: 2,
         title: "Ravenous",
         desc:
             "Ravenous is a restaurant recommendation website that allows users to search " +
@@ -42,6 +46,7 @@ const projectsList = [
         category: ["React", "HTML", "CSS", "JavaScript", "Yelp API", "Git", "GitHub"],
     },
     {
+        id: 3,
         title: "My Portfolio Website",
         desc:
             "I built this website with React to demonstrate some of my projects and web development skills.  It uses React Router for the routing, Framer Motion " +
@@ -51,9 +56,10 @@ const projectsList = [
         authorName: "Daniel Myers",
         href: "/",
         github: "https://github.com/dnmyers/portfolio",
-        category: ["React", "Tailwind CSS", "Framer Motion", "React Router", "EmailJS","HTML", "CSS", "JavaScript",  "Git", "GitHub"],
+        category: ["React", "Tailwind CSS", "Framer Motion", "React Router", "EmailJS", "HTML", "CSS", "JavaScript", "Git", "GitHub"],
     },
     {
+        id: 4,
         title: "Inspirational Homepage",
         desc: "Inspirational Homepage is a project I completed for an Advance React and Redux course I took from Codecademy.  It uses React, " +
             "Redux Toolkit, SCSS, Framer-Motion, Axios, and some other libraries to display " +
@@ -67,6 +73,7 @@ const projectsList = [
         category: ["React", "Redux", "Framer Motion", "Sass", "OpenWeatherMap API", "Unsplash API", "Quotable API", "HTML", "JavaScript", "Git", "GitHub"],
     },
     {
+        id: 5,
         title: "League",
         // desc: "This is a .NET Web App I created as my capstone project for the Codecademy ASP.NET Skill Path.",
         desc:

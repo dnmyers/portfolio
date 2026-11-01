@@ -1,3 +1,4 @@
+// src/components/Projects/Project/Project.jsx
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { MarkGithubIcon } from "@primer/octicons-react";

@@ -1,3 +1,4 @@
+// src/components/About/About.jsx
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
